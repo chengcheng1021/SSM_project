@@ -34,6 +34,7 @@ public class ProductServiceImpl implements IProductService {
      */
     @Override
     public void save(Product product) throws Exception {
+        System.out.println(product);
         productDao.save(product);
     }
 }

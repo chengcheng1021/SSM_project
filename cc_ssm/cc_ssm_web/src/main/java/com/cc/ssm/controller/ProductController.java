@@ -22,6 +22,7 @@ public class ProductController {
      */
     @RequestMapping("/save.do")
     public String save(Product product) throws Exception {
+        System.out.println(product);
         productService.save(product);
         return "redirect:findAll.do";
     }
@@ -35,7 +36,7 @@ public class ProductController {
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
         List<Product> ps = productService.findAll();
-        System.out.println(ps);
+        //System.out.println(ps);
         mv.addObject("productList", ps);
         mv.setViewName("product-list1");
 
