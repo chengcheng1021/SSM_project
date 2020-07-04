@@ -24,7 +24,9 @@ public class OrdersController {
     @RequestMapping("/findAll.do")
     public ModelAndView findAll() throws Exception {
         List<Orders> orders = ordersService.findAll();
-
-        return null;
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("", orders);
+        mv.setViewName("");
+        return mv;
     }
 }
