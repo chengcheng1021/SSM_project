@@ -1,5 +1,7 @@
 package com.cc.ssm.domain;
 
+import com.cc.ssm.utils.DateUtils;
+
 import java.util.Date;
 
 /**
@@ -16,6 +18,22 @@ public class Product {
     private double productPrice; // 产品价格
     private String productDesc; // 产品描述
     private Integer productStatus; // 状态 0 关闭 1 开启 private String productStatusStr;
+    private String productStatusStr;
+
+    public String getProductStatusStr() {
+        if (productStatus != null) {
+            // 状态 0 关闭 1 开启
+            if(productStatus==0)
+                productStatusStr="关闭";
+            if(productStatus==1)
+                productStatusStr="开启";
+        }
+        return productStatusStr;
+    }
+
+    public void setProductStatusStr(String productStatusStr) {
+        this.productStatusStr = productStatusStr;
+    }
 
     public String getId() {
         return id;
@@ -58,6 +76,9 @@ public class Product {
     }
 
     public String getDepartureTimeStr() {
+        if (departureTime != null) {
+            departureTimeStr = DateUtils.date2String(departureTime, "yyyy-MM-dd HH:mm:ss");
+        }
         return departureTimeStr;
     }
 
@@ -87,5 +108,20 @@ public class Product {
 
     public void setProductStatus(Integer productStatus) {
         this.productStatus = productStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", productNum='" + productNum + '\'' +
+                ", productName='" + productName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", departureTime=" + departureTime +
+                ", departureTimeStr='" + departureTimeStr + '\'' +
+                ", productPrice=" + productPrice +
+                ", productDesc='" + productDesc + '\'' +
+                ", productStatus=" + productStatus +
+                '}';
     }
 }
