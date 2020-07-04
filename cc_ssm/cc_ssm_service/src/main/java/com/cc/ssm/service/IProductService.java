@@ -11,7 +11,12 @@ public interface IProductService {
      * @return
      * @throws Exception
      */
-    public List<Product> findAll() throws Exception;
+    List<Product> findAll() throws Exception;
 
+    /**
+     * 保存用户
+     * @param product
+     * @throws Exception
+     */
     void save(Product product) throws Exception;
 }
