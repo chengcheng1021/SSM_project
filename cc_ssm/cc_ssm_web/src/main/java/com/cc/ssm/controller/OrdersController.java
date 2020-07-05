@@ -25,8 +25,8 @@ public class OrdersController {
     public ModelAndView findAll() throws Exception {
         List<Orders> orders = ordersService.findAll();
         ModelAndView mv = new ModelAndView();
-        mv.addObject("", orders);
-        mv.setViewName("");
+        mv.addObject("ordersList", orders);
+        mv.setViewName("orders-list");
         return mv;
     }
 }
