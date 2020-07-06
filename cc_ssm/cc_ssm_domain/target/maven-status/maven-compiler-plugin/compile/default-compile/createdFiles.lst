@@ -1,0 +1,7 @@
+com/cc/ssm/domain/Traveller.class
+com/cc/ssm/domain/Orders.class
+com/cc/ssm/domain/Role.class
+com/cc/ssm/domain/Member.class
+com/cc/ssm/domain/Product.class
+com/cc/ssm/domain/Permission.class
+com/cc/ssm/domain/UserInfo.class

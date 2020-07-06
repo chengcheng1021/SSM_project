@@ -4,11 +4,15 @@ import com.cc.ssm.dao.IUserDao;
 import com.cc.ssm.domain.UserInfo;
 import com.cc.ssm.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("userService")
 @Transactional
@@ -34,7 +38,17 @@ public class UserServiceImpl implements IUserService {
         }
 
         // 处理自己的用户对象封装成 UserDetails
-        User user = new User(userInfo.getUsername(), userInfo.getPassword(), null);
+        User user = new User(userInfo.getUsername(), "{noop}" + userInfo.getPassword(), getAuthority());
         return user;
+    }
+
+    /**
+     * 作用返回一个 List 集合，集合中
+     * @return
+     */
+    public List<SimpleGrantedAuthority> getAuthority() {
+        List<SimpleGrantedAuthority> list = new ArrayList<>();
+        list.add(new SimpleGrantedAuthority("ROLE_USER"));
+        return list;
     }
 }
