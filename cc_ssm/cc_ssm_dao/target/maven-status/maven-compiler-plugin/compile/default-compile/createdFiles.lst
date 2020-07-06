@@ -1,5 +1,6 @@
 com/cc/ssm/dao/IProductDao.class
 com/cc/ssm/dao/IOrdersDao.class
 com/cc/ssm/dao/IUserDao.class
+com/cc/ssm/dao/IRoleDao.class
 com/cc/ssm/dao/IMemberDao.class
 com/cc/ssm/dao/ITravellerDao.class

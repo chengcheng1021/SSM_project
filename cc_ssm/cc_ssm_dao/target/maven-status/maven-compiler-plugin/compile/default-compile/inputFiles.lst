@@ -2,4 +2,5 @@
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_dao/src/main/java/com/cc/ssm/dao/ITravellerDao.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_dao/src/main/java/com/cc/ssm/dao/IProductDao.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_dao/src/main/java/com/cc/ssm/dao/IMemberDao.java
+/Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_dao/src/main/java/com/cc/ssm/dao/IRoleDao.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_dao/src/main/java/com/cc/ssm/dao/IUserDao.java
