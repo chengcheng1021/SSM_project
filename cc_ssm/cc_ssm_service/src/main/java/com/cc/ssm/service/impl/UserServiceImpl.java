@@ -56,4 +56,15 @@ public class UserServiceImpl implements IUserService {
 
         return list;
     }
+
+    /**
+     * 查询所有用户
+     *
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<UserInfo> findAll() throws Exception {
+        return userDao.findAll();
+    }
 }
