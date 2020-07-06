@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cc_ssm_service" />
-        <module name="cc_ssm_utils" />
         <module name="cc_ssm_dao" />
+        <module name="cc_ssm_utils" />
         <module name="cc_ssm_domain" />
         <module name="cc_ssm_web" />
       </profile>
