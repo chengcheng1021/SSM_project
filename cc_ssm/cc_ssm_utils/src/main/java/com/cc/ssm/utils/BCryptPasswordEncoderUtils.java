@@ -14,4 +14,11 @@ public class BCryptPasswordEncoderUtils {
     public static String encodePassword(String password) {
         return bCryptPasswordEncoder.encode(password);
     }
+
+    public static void main(String[] args) {
+        String password = "cheng";
+        String pwd = encodePassword(password);
+
+        System.out.println(pwd);
+    }
 }
