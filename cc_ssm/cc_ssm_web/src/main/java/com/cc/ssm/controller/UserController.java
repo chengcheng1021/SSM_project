@@ -39,4 +39,18 @@ public class UserController {
         userService.save(userInfo);
         return "redirect:findAll.do";
     }
+
+    /**
+     * 查询指定ID用户
+     * @param id
+     * @return
+     */
+    @RequestMapping("/findById.do")
+    public ModelAndView findById(String id) throws Exception {
+        ModelAndView mv = new ModelAndView();
+        UserInfo userInfo = userService.findById(id);
+        mv.addObject("", userInfo);
+        mv.setViewName("user-show");
+        return mv;
+    }
 }
