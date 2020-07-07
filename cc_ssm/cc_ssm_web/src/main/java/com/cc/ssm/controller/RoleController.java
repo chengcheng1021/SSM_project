@@ -56,4 +56,16 @@ public class RoleController {
         mv.setViewName("role-show");
         return mv;
     }
+
+    /**
+     * 删除角色
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/deleteRole.do")
+    public String deleteRole(@RequestParam(name = "id", required = true) String roleId) throws Exception {
+        roleService.deleteRoleById(roleId);
+        return "redirect:findAll.do";
+    }
 }

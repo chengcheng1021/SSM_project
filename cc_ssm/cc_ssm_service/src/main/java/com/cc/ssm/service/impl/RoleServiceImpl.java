@@ -47,4 +47,20 @@ public class RoleServiceImpl implements IRoleService {
     public Role findById(String roleId) throws Exception {
         return roleDao.findById(roleId);
     }
+
+    /**
+     * 删除角色
+     *
+     * @param roleId
+     * @throws Exception
+     */
+    @Override
+    public void deleteRoleById(String roleId) throws Exception {
+        // 从 user_role 表中删除
+        roleDao.deleteFromUser_RoleByRoleId(roleId);
+        // 从 role_permission 表中删除
+        roleDao.deleteFromRole_PermissionByRoleId(roleId);
+        // 从 role 表中删除
+        roleDao.deleteRoleById(roleId);
+    }
 }

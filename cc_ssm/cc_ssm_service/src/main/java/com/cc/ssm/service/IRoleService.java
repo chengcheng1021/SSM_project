@@ -25,4 +25,11 @@ public interface IRoleService {
      * @throws Exception
      */
     Role findById(String roleId) throws Exception;
+
+    /**
+     * 删除角色
+     * @param roleId
+     * @throws Exception
+     */
+    void deleteRoleById(String roleId) throws Exception;
 }

@@ -50,4 +50,25 @@ public interface IRoleDao {
             @Result(property = "permissions", column = "id", javaType = java.util.List.class, many = @Many(select = "com.cc.ssm.dao.IPermissionDao.findPermissionByRoleId")),
     })
     Role findById(String roleId) throws Exception;
+
+    /**
+     * 从 user_role 表中删除
+     * @param roleId
+     */
+    @Delete("delete from users_role where roleId = #{roleId}")
+    void deleteFromUser_RoleByRoleId(String roleId);
+
+    /**
+     * 从 role_permission 表中删除
+     * @param roleId
+     */
+    @Delete("delete from role_permission where roleId = #{roleId}")
+    void deleteFromRole_PermissionByRoleId(String roleId);
+
+    /**
+     * 从 role 表中删除
+     * @param roleId
+     */
+    @Delete("delete from role where id = #{roleId}")
+    void deleteRoleById(String roleId);
 }
