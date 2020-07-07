@@ -28,4 +28,15 @@ public class RoleController {
         mv.setViewName("role-list");
         return mv;
     }
+
+    /**
+     * 新增角色
+     * @param role
+     * @return
+     */
+    @RequestMapping("/save.do")
+    public String save(Role role) throws Exception {
+        roleService.save(role);
+        return "redirect:findAll.do";
+    }
 }

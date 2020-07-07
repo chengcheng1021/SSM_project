@@ -25,4 +25,14 @@ public class RoleServiceImpl implements IRoleService {
     public List<Role> findAll() throws Exception {
         return roleDao.findAll();
     }
+
+    /**
+     * 新增角色
+     *
+     * @param role
+     */
+    @Override
+    public void save(Role role) throws Exception {
+        roleDao.save(role);
+    }
 }

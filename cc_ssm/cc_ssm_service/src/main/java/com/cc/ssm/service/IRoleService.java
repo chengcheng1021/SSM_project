@@ -11,4 +11,10 @@ public interface IRoleService {
      * @return
      */
     public List<Role> findAll() throws Exception;
+
+    /**
+     * 新增角色
+     * @param role
+     */
+    void save(Role role) throws Exception;
 }
