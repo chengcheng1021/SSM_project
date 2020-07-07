@@ -35,4 +35,16 @@ public class RoleServiceImpl implements IRoleService {
     public void save(Role role) throws Exception {
         roleDao.save(role);
     }
+
+    /**
+     * 根据ID查询角色
+     *
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Role findById(String roleId) throws Exception {
+        return roleDao.findById(roleId);
+    }
 }

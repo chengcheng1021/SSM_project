@@ -17,4 +17,12 @@ public interface IRoleService {
      * @param role
      */
     void save(Role role) throws Exception;
+
+    /**
+     * 根据ID查询角色
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    Role findById(String roleId) throws Exception;
 }

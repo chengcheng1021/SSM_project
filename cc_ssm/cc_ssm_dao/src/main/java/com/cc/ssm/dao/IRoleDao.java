@@ -35,4 +35,19 @@ public interface IRoleDao {
      */
     @Insert("insert into role(roleName, roleDesc) values(#{roleName}, #{roleDesc})")
     void save(Role role) throws Exception;
+
+    /**
+     * 根据ID查询角色
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    @Select("select * from role where id = #{roleId}")
+    @Results({
+            @Result(id = true, property = "id", column = "id"),
+            @Result(property = "roleName", column = "roleName"),
+            @Result(property = "roleDesc", column = "roleDesc"),
+            @Result(property = "permissions", column = "id", javaType = java.util.List.class, many = @Many(select = "com.cc.ssm.dao.IPermissionDao.findPermissionByRoleId")),
+    })
+    Role findById(String roleId) throws Exception;
 }
