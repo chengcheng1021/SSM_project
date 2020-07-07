@@ -12,4 +12,10 @@ public interface IPermissionService {
      * @throws Exception
      */
     public List<Permission> findAll() throws Exception;
+
+    /**
+     * 新增权限
+     * @param permission
+     */
+    void save(Permission permission) throws Exception;
 }

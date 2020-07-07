@@ -27,4 +27,16 @@ public class PermissionController {
         mv.addObject("permissionList", permissionList);
         return mv;
     }
+
+    /**
+     * 新增权限
+     * @param permission
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/save.do")
+    public String save(Permission permission) throws Exception {
+        permissionService.save(permission);
+        return "redirect:findAll.do";
+    }
 }
