@@ -5,4 +5,6 @@
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/impl/OrdersServiceImpl.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/IOrdersService.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/impl/RoleServiceImpl.java
+/Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/IPermissionService.java
+/Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/impl/PermissionServiceImpl.java
 /Users/chengcheng/Desktop/github/java/SSM_project/cc_ssm/cc_ssm_service/src/main/java/com/cc/ssm/service/IProductService.java

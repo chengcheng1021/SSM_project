@@ -1,8 +1,10 @@
 com/cc/ssm/service/IOrdersService.class
 com/cc/ssm/service/IRoleService.class
+com/cc/ssm/service/IPermissionService.class
 com/cc/ssm/service/impl/RoleServiceImpl.class
 com/cc/ssm/service/IProductService.class
 com/cc/ssm/service/impl/UserServiceImpl.class
+com/cc/ssm/service/impl/PermissionServiceImpl.class
 com/cc/ssm/service/impl/OrdersServiceImpl.class
 com/cc/ssm/service/impl/ProductServiceImpl.class
 com/cc/ssm/service/IUserService.class
