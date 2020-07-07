@@ -49,7 +49,7 @@ public class UserController {
     public ModelAndView findById(String id) throws Exception {
         ModelAndView mv = new ModelAndView();
         UserInfo userInfo = userService.findById(id);
-        mv.addObject("", userInfo);
+        mv.addObject("user", userInfo);
         mv.setViewName("user-show");
         return mv;
     }
