@@ -1,2 +1,0 @@
-0:0:0:0:0:0:0:1 - - [06/Jul/2020:21:35:15 +0800] "POST /cc_ssm_web/login.do HTTP/1.1" 200 12987 http-bio-8888-exec-1 1220
-0:0:0:0:0:0:0:1 - - [06/Jul/2020:21:35:17 +0800] "GET /cc_ssm_web/user/findAll.do HTTP/1.1" 200 15569 http-bio-8888-exec-3 267

@@ -28,4 +28,15 @@ public class UserController {
         mv.setViewName("user-list");
         return mv;
     }
+
+    /**
+     * 新增用户
+     * @param userInfo
+     * @return
+     */
+    @RequestMapping("/save.do")
+    public String save(UserInfo userInfo) throws Exception {
+        userService.save(userInfo);
+        return "redirect:findAll.do";
+    }
 }

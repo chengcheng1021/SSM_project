@@ -13,4 +13,11 @@ public interface IUserService extends UserDetailsService {
      * @throws Exception
      */
     List<UserInfo> findAll() throws Exception;
+
+    /**
+     * 新增用户
+     * @param userInfo
+     * @throws Exception
+     */
+    void save(UserInfo userInfo) throws Exception;
 }
