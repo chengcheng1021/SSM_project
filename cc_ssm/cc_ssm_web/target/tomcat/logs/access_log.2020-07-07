@@ -1,11 +1,3 @@
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:23 +0800] "GET /cc_ssm_web/user/findById.do?id=449bf1ccbf3311eaa09cd6dfdaa7b494 HTTP/1.1" 302 - http-bio-8888-exec-1 50
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:24 +0800] "GET /cc_ssm_web/login.jsp HTTP/1.1" 200 2606 http-bio-8888-exec-3 513
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "POST /cc_ssm_web/login.do HTTP/1.1" 200 12987 http-bio-8888-exec-4 597
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "GET /cc_ssm_web/plugins/jQueryUI/jquery-ui.min.js HTTP/1.1" 200 240427 http-bio-8888-exec-5 4
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "GET /cc_ssm_web/plugins/jvectormap/jquery-jvectormap-world-mill-en.js HTTP/1.1" 200 144313 http-bio-8888-exec-2 5
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "GET /cc_ssm_web/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js HTTP/1.1" 200 210932 http-bio-8888-exec-7 2
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "GET /cc_ssm_web/plugins/ckeditor/ckeditor.js HTTP/1.1" 200 518085 http-bio-8888-exec-8 3
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:26 +0800] "GET /cc_ssm_web/img/center.jpg HTTP/1.1" 200 221181 http-bio-8888-exec-9 3
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:30 +0800] "GET /cc_ssm_web/user/findAll.do HTTP/1.1" 200 16189 http-bio-8888-exec-10 187
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:33 +0800] "GET /cc_ssm_web/user/findById.do?id=449bf1ccbf3311eaa09cd6dfdaa7b494 HTTP/1.1" 200 18311 http-bio-8888-exec-10 100
-0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:32:33 +0800] "GET /cc_ssm_web/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js HTTP/1.1" 200 70104 http-bio-8888-exec-10 2
+0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:51:16 +0800] "GET /cc_ssm_web/user/findById.do?id=449bf1ccbf3311eaa09cd6dfdaa7b494 HTTP/1.1" 302 - http-bio-8888-exec-1 52
+0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:51:17 +0800] "GET /cc_ssm_web/login.jsp HTTP/1.1" 200 2606 http-bio-8888-exec-3 454
+0:0:0:0:0:0:0:1 - - [07/Jul/2020:17:51:19 +0800] "POST /cc_ssm_web/login.do HTTP/1.1" 200 12987 http-bio-8888-exec-4 550
