@@ -1,5 +1,6 @@
 package com.cc.ssm.service;
 
+import com.cc.ssm.domain.Permission;
 import com.cc.ssm.domain.Role;
 
 import java.util.List;
@@ -32,4 +33,11 @@ public interface IRoleService {
      * @throws Exception
      */
     void deleteRoleById(String roleId) throws Exception;
+
+    /**
+     * 根据 roleId 查询可以添加的权限
+     * @param roleId
+     * @return
+     */
+    List<Permission> findOtherPermission(String roleId) throws Exception;
 }

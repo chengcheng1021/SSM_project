@@ -1,5 +1,6 @@
 package com.cc.ssm.dao;
 
+import com.cc.ssm.domain.Permission;
 import com.cc.ssm.domain.Role;
 import org.apache.ibatis.annotations.*;
 
@@ -56,19 +57,28 @@ public interface IRoleDao {
      * @param roleId
      */
     @Delete("delete from users_role where roleId = #{roleId}")
-    void deleteFromUser_RoleByRoleId(String roleId);
+    void deleteFromUser_RoleByRoleId(String roleId) throws Exception;
 
     /**
      * 从 role_permission 表中删除
      * @param roleId
      */
     @Delete("delete from role_permission where roleId = #{roleId}")
-    void deleteFromRole_PermissionByRoleId(String roleId);
+    void deleteFromRole_PermissionByRoleId(String roleId) throws Exception;
 
     /**
      * 从 role 表中删除
      * @param roleId
      */
     @Delete("delete from role where id = #{roleId}")
-    void deleteRoleById(String roleId);
+    void deleteRoleById(String roleId) throws Exception;
+
+    /**
+     * 根据 roleId 查询可以添加的权限
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    @Select("select * from permission where id not in(select permissionId from role_permission where roleId = #{roleId})")
+    List<Permission> findOtherPermission(String roleId) throws Exception;
 }

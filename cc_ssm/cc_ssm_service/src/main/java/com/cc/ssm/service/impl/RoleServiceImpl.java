@@ -1,6 +1,7 @@
 package com.cc.ssm.service.impl;
 
 import com.cc.ssm.dao.IRoleDao;
+import com.cc.ssm.domain.Permission;
 import com.cc.ssm.domain.Role;
 import com.cc.ssm.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,16 @@ public class RoleServiceImpl implements IRoleService {
         roleDao.deleteFromRole_PermissionByRoleId(roleId);
         // 从 role 表中删除
         roleDao.deleteRoleById(roleId);
+    }
+
+    /**
+     * 根据 roleId 查询可以添加的权限
+     *
+     * @param roleId
+     * @return
+     */
+    @Override
+    public List<Permission> findOtherPermission(String roleId) throws Exception {
+        return roleDao.findOtherPermission(roleId);
     }
 }

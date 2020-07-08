@@ -1,5 +1,6 @@
 package com.cc.ssm.controller;
 
+import com.cc.ssm.domain.Permission;
 import com.cc.ssm.domain.Role;
 import com.cc.ssm.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,26 @@ public class RoleController {
     public String deleteRole(@RequestParam(name = "id", required = true) String roleId) throws Exception {
         roleService.deleteRoleById(roleId);
         return "redirect:findAll.do";
+    }
+
+    /**
+     * 根据 roleId 查询 role，并查询出可以添加的权限
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/findRoleByIdAndAllPermission.do")
+    public ModelAndView findRoleByIdAndAllPermission(@RequestParam(name = "id", required = true) String roleId) throws Exception {
+        // 根据 roleId 查询 role
+        Role role = roleService.findById(roleId);
+
+        // 根据 roleId 查询可以添加的权限
+        List<Permission> otherPermissions = roleService.findOtherPermission(roleId);
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("role-permission-add");
+        mv.addObject("role", role);
+        mv.addObject("permissionList", otherPermissions);
+        return mv;
     }
 }
