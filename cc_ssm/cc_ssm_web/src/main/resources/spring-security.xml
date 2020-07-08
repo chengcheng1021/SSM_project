@@ -62,6 +62,7 @@
     -->
 
 <!--    <security:global-method-security jsr250-annotations="enabled" />-->
-    <security:global-method-security secured-annotations="enabled" />
+<!--    <security:global-method-security secured-annotations="enabled" />-->
+    <security:global-method-security jsr250-annotations="enabled" secured-annotations="enabled" pre-post-annotations="enabled" />
 
 </beans>
