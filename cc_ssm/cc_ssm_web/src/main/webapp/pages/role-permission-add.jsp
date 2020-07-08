@@ -93,12 +93,12 @@
 			<!-- 内容头部 /-->
 
 			<form
-				action="${pageContext.request.contextPath}/user/addPermissionToRole.do"
+				action="${pageContext.request.contextPath}/role/addPermissionToRole.do"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> 
 				
-				<input type="hidden" name="userId" value="${role.id}">
+				<input type="hidden" name="roleId" value="${role.id}">
 				
 					<table id="dataList"
 							class="table table-bordered table-striped table-hover dataTable">
@@ -117,7 +117,7 @@
 									<tr>
 										<td>
 										
-										<input name="ids" type="checkbox" value="${role.id}">
+										<input name="ids" type="checkbox" value="${permission.id}">
 										
 										</td>
 										<td>${permission.id}</td>

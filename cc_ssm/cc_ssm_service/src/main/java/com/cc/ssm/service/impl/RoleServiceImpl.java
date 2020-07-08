@@ -75,4 +75,19 @@ public class RoleServiceImpl implements IRoleService {
     public List<Permission> findOtherPermission(String roleId) throws Exception {
         return roleDao.findOtherPermission(roleId);
     }
+
+    /**
+     * 给角色添加权限
+     *
+     * @param roleId
+     * @param permissionIds
+     * @throws Exception
+     */
+    @Override
+    public void addPermissionToRole(String roleId, String[] permissionIds) throws Exception {
+
+        for (String permissionId : permissionIds) {
+            roleDao.addPermissionToRole(roleId, permissionId);
+        }
+    }
 }

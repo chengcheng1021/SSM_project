@@ -40,4 +40,12 @@ public interface IRoleService {
      * @return
      */
     List<Permission> findOtherPermission(String roleId) throws Exception;
+
+    /**
+     * 给角色添加权限
+     * @param roleId
+     * @param permissionIds
+     * @throws Exception
+     */
+    void addPermissionToRole(String roleId, String[] permissionIds) throws Exception;
 }
