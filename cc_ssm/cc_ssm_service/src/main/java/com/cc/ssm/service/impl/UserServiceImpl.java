@@ -94,4 +94,15 @@ public class UserServiceImpl implements IUserService {
     public UserInfo findById(String id) throws Exception {
         return userDao.findById(id);
     }
+
+    /**
+     * 根据 用户id 查询可以添加的角色
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public List<Role> findOtherRoles(String userId) throws Exception {
+        return userDao.findOtherRoles(userId);
+    }
 }

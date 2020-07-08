@@ -1,5 +1,6 @@
 package com.cc.ssm.dao;
 
+import com.cc.ssm.domain.Role;
 import com.cc.ssm.domain.UserInfo;
 import org.apache.ibatis.annotations.*;
 
@@ -55,4 +56,12 @@ public interface IUserDao {
             @Result(property = "roles", column = "id", javaType = java.util.List.class, many = @Many(select = "com.cc.ssm.dao.IRoleDao.findRoleByUserId")),
     })
     UserInfo findById(String id) throws Exception;
+
+    /**
+     * 根据 用户id 查询可以添加的角色
+     * @param userId
+     * @return
+     */
+    @Select("select * from role where id not in(select roleId from users_role where userId=#{userId})")
+    List<Role> findOtherRoles(String userId) throws Exception;
 }

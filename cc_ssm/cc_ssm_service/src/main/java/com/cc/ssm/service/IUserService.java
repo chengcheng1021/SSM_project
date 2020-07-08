@@ -1,5 +1,6 @@
 package com.cc.ssm.service;
 
+import com.cc.ssm.domain.Role;
 import com.cc.ssm.domain.UserInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -27,4 +28,11 @@ public interface IUserService extends UserDetailsService {
      * @return
      */
     UserInfo findById(String id) throws Exception;
+
+    /**
+     * 根据 用户id 查询可以添加的角色
+     * @param userId
+     * @return
+     */
+    List<Role> findOtherRoles(String userId) throws Exception;
 }
