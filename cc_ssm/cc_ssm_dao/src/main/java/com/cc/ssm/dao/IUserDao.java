@@ -72,5 +72,5 @@ public interface IUserDao {
      * @throws Exception
      */
     @Insert("insert into users_role(userId, roleId) values(#{userId}, #{roleId})")
-    void addRoleToUser(String userId, String roleId) throws Exception;
+    void addRoleToUser(@Param("userId") String userId, @Param("roleId") String roleId) throws Exception;
 }
