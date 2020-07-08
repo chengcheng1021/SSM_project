@@ -76,4 +76,16 @@ public class UserController {
         mv.setViewName("user-role-add");
         return mv;
     }
+
+    /**
+     * 给用户添加角色
+     * @param userId
+     * @param roleIds
+     */
+    @RequestMapping("/addRoleToUser.do")
+    public String addRoleToUser(@RequestParam(name = "userId", required = true) String userId, @RequestParam(name = "ids", required = true) String[] roleIds) throws Exception {
+        userService.addRoleToUser(userId, roleIds);
+
+        return "redirect:findAll.do";
+    }
 }

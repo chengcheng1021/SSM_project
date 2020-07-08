@@ -105,4 +105,18 @@ public class UserServiceImpl implements IUserService {
     public List<Role> findOtherRoles(String userId) throws Exception {
         return userDao.findOtherRoles(userId);
     }
+
+    /**
+     * 给用户添加角色
+     *
+     * @param userId
+     * @param roleIds
+     */
+    @Override
+    public void addRoleToUser(String userId, String[] roleIds) throws Exception {
+
+        for (String roleId : roleIds) {
+            userDao.addRoleToUser(userId, roleId);
+        }
+    }
 }

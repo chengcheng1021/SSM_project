@@ -35,4 +35,11 @@ public interface IUserService extends UserDetailsService {
      * @return
      */
     List<Role> findOtherRoles(String userId) throws Exception;
+
+    /**
+     * 给用户添加角色
+     * @param userId
+     * @param roleIds
+     */
+    void addRoleToUser(String userId, String[] roleIds) throws Exception;
 }
