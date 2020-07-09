@@ -1,6 +1,7 @@
 package com.cc.ssm.controller;
 
 import com.cc.ssm.domain.SysLog;
+import com.cc.ssm.service.ISysLogService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -22,6 +23,9 @@ public class LogAop {
 
     @Autowired
     private HttpServletRequest request;
+
+    @Autowired
+    private ISysLogService sysLogService;
 
     private Date visitTime; // 开始时间
     private Class clazz;    // 访问的类
@@ -56,7 +60,7 @@ public class LogAop {
      * @param jp
      */
     @After("execution(* com.cc.ssm.controller.*.*(..))")
-    public void doAfter(JoinPoint jp) {
+    public void doAfter(JoinPoint jp) throws Exception {
         long time = new Date().getTime() - visitTime.getTime(); // 获取访问时长
 
         String url = "";
@@ -83,10 +87,20 @@ public class LogAop {
                     SecurityContext context = SecurityContextHolder.getContext(); // 从上下文中获取当前登录的用户
                     User user = (User) context.getAuthentication().getPrincipal();
                     String username = user.getUsername();
+
+                    // 将日志相关信息封装到 SysLog 对象
+                    SysLog sysLog = new SysLog();
+                    sysLog.setExecutionTime(time);  // 执行时长
+                    sysLog.setIp(ip);   // ip地址
+                    sysLog.setMethod("【类名】" + clazz.getName() + "【方法名】"+ method.getName());
+                    sysLog.setUrl(url);
+                    sysLog.setUsername(username);
+                    sysLog.setVisitTime(visitTime);
+
+                    // 调用 Service 完成操作
+                    sysLogService.save(sysLog);
                 }
             }
         }
-
-
     }
 }
