@@ -1,17 +1,24 @@
 package com.cc.ssm.controller;
 
+import com.cc.ssm.domain.SysLog;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.Date;
 
 @Component
 @Aspect
 public class LogAop {
+
+    @Autowired
+    private HttpServletRequest request;
 
     private Date visitTime; // 开始时间
     private Class clazz;    // 访问的类
@@ -48,6 +55,30 @@ public class LogAop {
     @After("execution(* com.cc.ssm.controller.*.*(..))")
     public void doAfter(JoinPoint jp) {
         long time = new Date().getTime() - visitTime.getTime(); // 获取访问时长
+
+        String url = "";
+
+        // 获取 url
+        if (clazz != null && method != null && clazz != LogAop.class) {
+
+            // 1、获取类上的 @RequestMapping("/orders")
+            RequestMapping classAnnotation = (RequestMapping) clazz.getAnnotation(RequestMapping.class);
+
+            if (classAnnotation != null) {
+                String classValue = classAnnotation.value()[0];
+
+                // 2、获取方法上的 @RequestMapping(xxx)
+                RequestMapping methodAnnotation = method.getAnnotation(RequestMapping.class);
+                if (methodAnnotation != null) {
+                    String methodValue = methodAnnotation.value()[0];
+                    url = classValue + methodValue;
+
+                    // 获取访问的IP
+                    String ip = request.getRemoteAddr();
+                }
+            }
+        }
+
 
     }
 }
