@@ -40,8 +40,8 @@ public class OrdersController {
      */
     @RequestMapping("/findAll.do")
     @Secured("ROLE_ADMIN")
-    public ModelAndView findAll(@RequestParam(name = "page", required = true, defaultValue = "1") int page,
-                                @RequestParam(name = "size", required = true, defaultValue = "4") int size)
+    public ModelAndView findAll(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                @RequestParam(name = "size", required = true, defaultValue = "4") Integer size)
             throws Exception {
         List<Orders> orders = ordersService.findAll(page, size);
         ModelAndView mv = new ModelAndView();

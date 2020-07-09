@@ -7,4 +7,6 @@ com/cc/ssm/service/impl/UserServiceImpl.class
 com/cc/ssm/service/impl/PermissionServiceImpl.class
 com/cc/ssm/service/impl/OrdersServiceImpl.class
 com/cc/ssm/service/impl/ProductServiceImpl.class
+com/cc/ssm/service/impl/SysLogService.class
 com/cc/ssm/service/IUserService.class
+com/cc/ssm/service/ISysLogService.class

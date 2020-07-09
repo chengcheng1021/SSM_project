@@ -1,6 +1,7 @@
 com/cc/ssm/dao/IRoleDao.class
 com/cc/ssm/dao/IPermissionDao.class
 com/cc/ssm/dao/IMemberDao.class
+com/cc/ssm/dao/ISysLogDao.class
 com/cc/ssm/dao/ITravellerDao.class
 com/cc/ssm/dao/IProductDao.class
 com/cc/ssm/dao/IOrdersDao.class

@@ -1,2 +1,0 @@
-0:0:0:0:0:0:0:1 - - [08/Jul/2020:18:00:48 +0800] "GET /cc_ssm_web/login.jsp HTTP/1.1" 200 2606 http-bio-8888-exec-1 425
-0:0:0:0:0:0:0:1 - - [08/Jul/2020:18:00:50 +0800] "POST /cc_ssm_web/login.do HTTP/1.1" 200 12926 http-bio-8888-exec-3 699
